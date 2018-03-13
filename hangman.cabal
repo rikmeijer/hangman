@@ -3,7 +3,7 @@ version:             0.1.0.0
 -- synopsis:
 -- description:
 homepage:            https://github.com/rikmeijer/hangman#readme
-license:             BSD3
+license:             MIT
 license-file:        LICENSE
 author:              Rik Meijer
 maintainer:          rik@pulledbits.org
