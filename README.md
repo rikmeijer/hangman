@@ -1,3 +1,3 @@
 # hangman
 
-add description of hangman here
+Attempt to program hangman in haskell

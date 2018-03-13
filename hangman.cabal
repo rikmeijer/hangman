@@ -5,10 +5,10 @@ version:             0.1.0.0
 homepage:            https://github.com/rikmeijer/hangman#readme
 license:             BSD3
 license-file:        LICENSE
-author:              Author name here
-maintainer:          example@example.com
-copyright:           2018 Author name here
-category:            Web
+author:              Rik Meijer
+maintainer:          rik@pulledbits.org
+copyright:           2018 Rik Meijer
+category:            Games
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
@@ -40,4 +40,4 @@ test-suite hangman-test
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/hangman
+  location: https://github.com/rikmeijer/hangman
