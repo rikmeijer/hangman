@@ -1,4 +1,4 @@
-module HangmanSpec (main, hangman) where
+module HangmanSpec (main, spec) where
 
 import Test.Hspec
 import Test.QuickCheck
