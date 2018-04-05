@@ -1,9 +1,7 @@
 module Main where
 
-import Data.String.Strip
+import Hangman
 
-askName :: String -> String
-askName x = "Welcome " ++ x
 
 main :: IO ()
-main = interact askName
+main = interact hangman
