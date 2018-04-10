@@ -14,6 +14,4 @@ spec :: Spec
 spec = do
   describe "hangman" $ do
     it "determines the starting player" $ do
-      hangman "P1" "P2" `shouldStartWith` "The draw was made: "
-    it "determines the starting player" $ do
-      hangman "P1" "P2" `shouldEndWith` " begins."
+      hangman "P1" "P2" `shouldBe` "The draw was made: P1 begins."
