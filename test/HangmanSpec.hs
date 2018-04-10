@@ -13,5 +13,7 @@ main = hspec spec
 spec :: Spec
 spec = do
   describe "hangman" $ do
-    it "starts the game of hangman" $ do
-      hangman "Rik" `shouldBe` "Welcome Rik"
+    it "determines the starting player" $ do
+      hangman "P1" "P2" `shouldStartWith` "The draw was made: "
+    it "determines the starting player" $ do
+      hangman "P1" "P2" `shouldEndWith` " begins."
