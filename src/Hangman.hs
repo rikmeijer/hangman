@@ -1,6 +1,6 @@
 module Hangman (hangman)  where
 
-import System.IO
+import Hangman.IO
 
 hangman :: IO ()
 hangman = do
@@ -8,12 +8,6 @@ hangman = do
     namePlayer1 <- ask (questionPlayerName "1")
     namePlayer2 <- ask (questionPlayerName "2")
     putStrLn (draw namePlayer1 namePlayer2)
-
-ask :: String -> IO String
-ask question = do
-    putStr question
-    hFlush stdout
-    getLine
 
 questionPlayerName :: String -> String
 questionPlayerName index = "Please enter the name of player " ++ index ++ " (use 'C' for computer): "
