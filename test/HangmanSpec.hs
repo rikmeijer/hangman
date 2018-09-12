@@ -13,5 +13,7 @@ main = hspec spec
 spec :: Spec
 spec = do
   describe "hangman" $ do
-    it "player 1 is always the beginning player" $ do
+    it "first player is always the beginning player" $ do
       hangman "P1" "P2" `shouldBe` "The draw was made: P1 begins."
+    it "C means a computer player" $ do
+      hangman "C" "P2" `shouldBe` "The draw was made: Computer begins."
