@@ -1,6 +1,21 @@
 module Hangman (hangman)  where
 
-hangman :: String -> String -> String
-hangman player1 player2 = "The draw was made: " ++ startingPlayer player1 ++ " begins."
+hangman :: IO ()
+hangman = do
+    putStrLn "Welcome to hangman!"
+    namePlayer1 <- ask (questionPlayerName "1")
+    namePlayer2 <- ask (questionPlayerName "2")
+    putStrLn (draw namePlayer1 namePlayer2)
+
+ask :: String -> IO String
+ask question = do
+    putStrLn question
+    getLine
+
+questionPlayerName :: String -> String
+questionPlayerName index = "Please enter the name of player " ++ index ++ " (use 'C' for computer): "
+
+draw :: String -> String -> String
+draw player1 player2 = "The draw was made: " ++ startingPlayer player1 ++ " begins."
   where startingPlayer "C" = "Computer"
         startingPlayer player1 = player1
