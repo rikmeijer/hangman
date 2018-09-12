@@ -1,5 +1,7 @@
 module Hangman (hangman)  where
 
+import System.IO
+
 hangman :: IO ()
 hangman = do
     putStrLn "Welcome to hangman!"
@@ -9,7 +11,8 @@ hangman = do
 
 ask :: String -> IO String
 ask question = do
-    putStrLn question
+    putStr question
+    hFlush stdout
     getLine
 
 questionPlayerName :: String -> String
