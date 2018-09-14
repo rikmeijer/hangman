@@ -28,8 +28,6 @@ play guesses word = do
   play (guesses ++ characterGuess) word
   where errorCount = (length (guesses \\ word))
 
-
-
 generateGallows :: Int -> [String]
 generateGallows errorCount
   | errorCount == 0 = ["","","","","","|____"]
