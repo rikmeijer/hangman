@@ -22,13 +22,25 @@ draw player1 player2 = "The draw was made: " ++ startingPlayer player1 ++ " begi
 play :: String -> String -> IO ()
 play guesses word = do
   putStrLn $ map (\a -> '.') word
-  putStrLn ("Errors: 0 (" ++ guesses ++ ")")
-  putStrLn (generateGallows 0)
+  putStrLn ("Errors: " ++ show errorCount ++ " (" ++ guesses ++ ")")
+  putStrLn $ unlines (generateGallows errorCount)
   characterGuess <- ask "Enter your guess: "
   play (guesses ++ characterGuess) word
+  where errorCount = (length (guesses \\ word))
 
 
-generateGallows :: Int -> String
-generateGallows state
-  | state == 0 = "|__"
-  | otherwise = "unknown"
+
+generateGallows :: Int -> [String]
+generateGallows errorCount
+  | errorCount == 0 = ["","","","","","|____"]
+  | errorCount == 1 = ["","|","|","|","|","|____"]
+  | errorCount == 2 = ["-----","|","|","|","|","|____"]
+  | errorCount == 3 = ["-----","|/","|","|","|","|____"]
+  | errorCount == 4 = ["-----","|/ |","|","|","|","|____"]
+  | errorCount == 5 = ["-----","|/ |","|  o","|","|","|____"]
+  | errorCount == 6 = ["-----","|/ |","|  o","|  |","|","|____"]
+  | errorCount == 7 = ["-----","|/ |","|  o","| /|","|","|____"]
+  | errorCount == 8 = ["-----","|/ |","|  o","| /|\\","|","|____"]
+  | errorCount == 9 = ["-----","|/ |","|  o","| /|\\","| /","|____"]
+  | errorCount == 10 = ["-----","|/ |","|  o","| /|\\","| / \\","|____"]
+  | otherwise = ["unknown"]
