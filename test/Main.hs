@@ -1,6 +1,6 @@
 module Main where
 
-import HangmanTests
+import Test.HUnit
+import Hangman.Tests
 
-main :: IO ()
-main = HangmanTests.tests
+main = runTestTT tests

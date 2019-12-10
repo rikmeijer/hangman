@@ -1,4 +1,4 @@
-module Hangman (hangman)  where
+module Hangman  where
 
 import Hangman.IO
 import Data.List
