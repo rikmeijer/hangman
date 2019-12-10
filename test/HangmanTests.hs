@@ -8,3 +8,6 @@ testSanity sanity =
   it ("should be sane") $
     sanity `shouldBe` True
 
+tests = hspec $ do
+  describe "sanity" $ do
+    testSanity True
