@@ -6,7 +6,7 @@ homepage:            https://github.com/rikmeijer/hangman#readme
 license:             MIT
 license-file:        LICENSE
 author:              Rik Meijer
-maintainer:          rik@pulledbits.org
+maintainer:          rik@rikmeijer.nl
 copyright:           2018 Rik Meijer
 category:            Games
 build-type:          Simple
