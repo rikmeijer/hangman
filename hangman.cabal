@@ -16,6 +16,7 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Hangman
+                     , Hangman.Gallows
   other-modules:       Hangman.IO
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
@@ -33,6 +34,7 @@ test-suite hangman-test
   hs-source-dirs:      test
   main-is:             Main.hs
   other-modules:       Hangman.Tests
+                     , Hangman.GallowsTests
   build-depends:       base
                      , hangman
                      , HUnit
