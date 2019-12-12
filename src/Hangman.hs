@@ -23,13 +23,13 @@ play :: String -> String -> IO ()
 play guesses word = do
   putStrLn $ map (\a -> '.') word
   putStrLn ("Errors: " ++ show errorCount ++ " (" ++ guesses ++ ")")
-  putStrLn $ unlines (generateGallows errorCount)
+  putStrLn $ unlines (gallow errorCount)
   characterGuess <- ask "Enter your guess: "
   play (guesses ++ characterGuess) word
   where errorCount = (length (guesses \\ word))
 
-generateGallows :: Int -> [String]
-generateGallows errorCount
+gallow :: Int -> [String]
+gallow errorCount
   | errorCount == 0 = ["","","","","","|____"]
   | errorCount == 1 = ["","|","|","|","|","|____"]
   | errorCount == 2 = ["-----","|","|","|","|","|____"]
