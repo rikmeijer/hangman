@@ -1,7 +1,7 @@
-module Hangman.Gallows (gallows) where
+module Hangman.Gallows (generate) where
 
-gallows :: Int -> [String]
-gallows errorCount
+generate :: Int -> [String]
+generate errorCount
   | errorCount == 0 = ["","","","","","|____"]
   | errorCount == 1 = ["","|","|","|","|","|____"]
   | errorCount == 2 = ["-----","|","|","|","|","|____"]

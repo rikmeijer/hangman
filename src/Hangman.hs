@@ -24,7 +24,7 @@ play :: String -> String -> IO ()
 play guesses word = do
   putStrLn $ map (const '.') word
   putStrLn ("Errors: " ++ show errorCount ++ " (" ++ guesses ++ ")")
-  putStrLn $ unlines (gallows errorCount)
+  putStrLn $ unlines (generate errorCount)
   characterGuess <- ask "Enter your guess: "
   play (guesses ++ characterGuess) word
   where
